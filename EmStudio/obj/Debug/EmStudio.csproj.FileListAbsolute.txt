@@ -1,0 +1,9 @@
+D:\projects\emulators\EmStudio\bin\Debug\EmStudio.exe.config
+D:\projects\emulators\EmStudio\bin\Debug\EmStudio.exe
+D:\projects\emulators\EmStudio\bin\Debug\EmStudio.pdb
+D:\projects\emulators\EmStudio\obj\Debug\EmStudio.csprojAssemblyReference.cache
+D:\projects\emulators\EmStudio\obj\Debug\EmStudio.MainForm.resources
+D:\projects\emulators\EmStudio\obj\Debug\EmStudio.Properties.Resources.resources
+D:\projects\emulators\EmStudio\obj\Debug\EmStudio.csproj.GenerateResource.cache
+D:\projects\emulators\EmStudio\obj\Debug\EmStudio.exe
+D:\projects\emulators\EmStudio\obj\Debug\EmStudio.pdb
