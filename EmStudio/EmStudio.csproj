@@ -45,6 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ECUs\pic12f675.cs" />
+    <Compile Include="ECUs\pic16f628.cs" />
+    <Compile Include="EntityService.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Interfaces\IMCU.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,5 +83,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
