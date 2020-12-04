@@ -1,0 +1,261 @@
+MPASM 03.80 Released                            BLINK_LED.ASM   12-2-2020  20:55:30         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[215]: Processor superseded by command line.  Verify processor symbol.
+                      00001     processor 12F675
+0000                  00002     org 0
+                      00003 
+                      00004 ; This shorthand assigns COUNT1=0x20, COUNT2=0x21, etc.
+                      00005     cblock 0x20
+  00000020            00006         COUNT1
+  00000021            00007         COUNT2
+  00000022            00008         COUNT3
+                      00009     endc
+                      00010 
+                      00011 ; See "Section 27. Device Configuration Bits" of the "PICmicro™ Mid-Range MCU
+                      00012 ; Family Reference Manual"
+                      00013 ; (http://ww1.microchip.com/downloads/en/DeviceDoc/33023a.pdf).
+                      00014 
+                      00015 ; _INTRC_OSC_NOCLKOUT: we want to use the internal oscillator to drive the PIC,
+                      00016 ; so that we don't need to connect a crystal, see "Section 2. Oscillator".
+                      00017 
+                      00018 ; _WDT_OFF: disable the watchdog timer, which if enabled would reset the PIC
+                      00019 ; every 18ms, see "Section 26. Watchdog Timer and Sleep Mode".
+                      00020 ;
+                      00021 ; _PWRTE_ON: enable the power-up timer, which instructs the MPU to wait about
+                      00022 ; 72ms to give time for Vdd to reach a stable voltage, see "9.3.3 POWER-UP TIMER
+                      00023 ; (PWRT)".
+                      00024 ;
+                      00025 ; _MCLRE_OFF: if "Master Clear" is enabled, pin 4/GP3 is the reset pin, so
+                      00026 ; you'd need to supply Vdd on that pin. By disabling this, GP3 becomes available
+                      00027 ; for I/O.
+                      00028 
+                      00029     #include <p12f675.inc>
+                      00001         LIST
+                      00002 ; P12F675.INC  Standard Header File, Version 1.04    Microchip Technology, Inc.
+Message[301]: MESSAGE: (Processor-header file mismatch.  Verify selected processor.)
+                      00284         LIST
+2007   3FC4           00030     __config _INTRC_OSC_NOCLKOUT & _WDT_OFF & _PWRTE_ON & _MCLRE_OFF
+                      00031 
+                      00032 ; The PIC assembler will warn every time you try to use a register that isn't
+                      00033 ; in Bank 0. The warning is annoying and unnecessary.
+                      00034     errorlevel -302
+                      00035 
+0000   0000           00036         nop
+0001   0000           00037         nop
+0002   0000           00038         nop
+0003   2802           00039         goto $-1
+Warning[203]: Found opcode in column 1. (goto)
+0004   2803           00040 goto $-1
+Warning[203]: Found opcode in column 1. (goto)
+0005   2804           00041 goto $-1
+Warning[203]: Found opcode in column 1. (goto)
+0006   2805           00042 goto $-1
+                      00043 
+                      00044     end
+MPASM 03.80 Released                            BLINK_LED.ASM   12-2-2020  20:55:30         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADCON0                            0000001F
+ADCS0                             00000004
+ADCS1                             00000005
+ADCS2                             00000006
+ADFM                              00000007
+ADIE                              00000006
+ADIF                              00000006
+ADON                              00000000
+ADRESH                            0000001E
+ADRESL                            0000009E
+ANS0                              00000000
+ANS1                              00000001
+ANS2                              00000002
+ANS3                              00000003
+ANSEL                             0000009F
+C                                 00000000
+CAL0                              00000002
+CAL1                              00000003
+CAL2                              00000004
+CAL3                              00000005
+CAL4                              00000006
+CAL5                              00000007
+CHS0                              00000002
+CHS1                              00000003
+CINV                              00000004
+CIS                               00000003
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             00000019
+CMIE                              00000003
+CMIF                              00000003
+COUNT1                            00000020
+COUNT2                            00000021
+COUNT3                            00000022
+COUT                              00000006
+DC                                00000001
+EEADR                             0000009B
+EECON1                            0000009C
+EECON2                            0000009D
+EEDAT                             0000009A
+EEDATA                            0000009A
+EEIE                              00000007
+EEIF                              00000007
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+GO                                00000001
+GO_DONE                           00000001
+GP0                               00000000
+GP1                               00000001
+GP2                               00000002
+GP3                               00000003
+MPASM 03.80 Released                            BLINK_LED.ASM   12-2-2020  20:55:30         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+GP4                               00000004
+GP5                               00000005
+GPIE                              00000003
+GPIF                              00000000
+GPIO                              00000005
+GPIO0                             00000000
+GPIO1                             00000001
+GPIO2                             00000002
+GPIO3                             00000003
+GPIO4                             00000004
+GPIO5                             00000005
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IOC                               00000096
+IOC0                              00000000
+IOC1                              00000001
+IOC2                              00000002
+IOC3                              00000003
+IOC4                              00000004
+IOC5                              00000005
+IOCB                              00000096
+IOCB0                             00000000
+IOCB1                             00000001
+IOCB2                             00000002
+IOCB3                             00000003
+IOCB4                             00000004
+IOCB5                             00000005
+IRP                               00000007
+NOT_BOD                           00000000
+NOT_DONE                          00000001
+NOT_GPPU                          00000007
+NOT_PD                            00000003
+NOT_POR                           00000001
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+OPTION_REG                        00000081
+OSCCAL                            00000090
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PIE1                              0000008C
+PIR1                              0000000C
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+MPASM 03.80 Released                            BLINK_LED.ASM   12-2-2020  20:55:30         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+STATUS                            00000003
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1IE                              00000000
+T1IF                              00000000
+T1OSCEN                           00000003
+TMR0                              00000001
+TMR1CS                            00000001
+TMR1GE                            00000006
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TRISIO                            00000085
+VCFG                              00000006
+VR0                               00000000
+VR1                               00000001
+VR2                               00000002
+VR3                               00000003
+VRCON                             00000099
+VREN                              00000007
+VRR                               00000005
+W                                 00000000
+WPU                               00000095
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_CPD_OFF                          00003FFF
+_CPD_ON                           00003EFF
+_CP_OFF                           00003FFF
+_CP_ON                            00003F7F
+_EC_OSC                           00003FFB
+_EXTRC_OSC_CLKOUT                 00003FFF
+_EXTRC_OSC_NOCLKOUT               00003FFE
+_HS_OSC                           00003FFA
+_INTRC_OSC_CLKOUT                 00003FFD
+_INTRC_OSC_NOCLKOUT               00003FFC
+_LP_OSC                           00003FF8
+_MCLRE_OFF                        00003FDF
+_MCLRE_ON                         00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FEF
+_WDT_OFF                          00003FF7
+_WDT_ON                           00003FFF
+MPASM 03.80 Released                            BLINK_LED.ASM   12-2-2020  20:55:30         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_XT_OSC                           00003FF9
+__RF675F                          00000001
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXX--------- ---------------- ---------------- ----------------
+2000 : -------X-------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:     7
+Program Memory Words Free:  1017
+
+
+Errors   :     0
+Warnings :     4 reported,     0 suppressed
+Messages :     1 reported,     0 suppressed
+
+

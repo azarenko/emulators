@@ -49,6 +49,12 @@
     <Compile Include="ECUs\pic16f628.cs" />
     <Compile Include="EntityService.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Forms\Programm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Programm.Designer.cs">
+      <DependentUpon>Programm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\IMCU.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -58,6 +64,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Programm.resx">
+      <DependentUpon>Programm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

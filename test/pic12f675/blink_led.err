@@ -1,0 +1,5 @@
+Warning[215] D:\PROJECTS\EMULATORS\TEST\PIC12F675\BLINK_LED.ASM 1 : Processor superseded by command line.  Verify processor symbol.
+Message[301] C:\PROGRAM FILES (X86)\MPLAB IDE\MCHIP_TOOLS\P12F675.INC 36 : MESSAGE: (Processor-header file mismatch.  Verify selected processor.)
+Warning[203] D:\PROJECTS\EMULATORS\TEST\PIC12F675\BLINK_LED.ASM 40 : Found opcode in column 1. (goto)
+Warning[203] D:\PROJECTS\EMULATORS\TEST\PIC12F675\BLINK_LED.ASM 41 : Found opcode in column 1. (goto)
+Warning[203] D:\PROJECTS\EMULATORS\TEST\PIC12F675\BLINK_LED.ASM 42 : Found opcode in column 1. (goto)
